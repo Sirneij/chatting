@@ -1,0 +1,73 @@
+<div class="col-md-6 col-lg-7 col-xl-8 scrollable" id="message-wrapper">
+  <h5 class="font-weight-bold mb-3 text-center text-lg-start">
+    {{user_object.get_full_name}}
+  </h5>
+  <ul class="list-unstyled" id="chat-body">
+    {% for message in messages %}
+    <!--check user-->
+    {% if message.sender == request.user %}
+    <li class="d-flex justify-content-end mb-4">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
+        alt="You"
+        title="You"
+        class="rounded-circle d-flex align-self-start me-3 shadow-1-strong"
+        width="60"
+      />
+      <div class="card">
+        <div class="card-header d-flex justify-content-between p-3">
+          <p class="fw-bold mb-0">{{message.sender.get_full_name}}</p>
+          <p class="text-muted small mb-0">
+            <i class="far fa-clock"></i> {{message.timestamp|timesince }}
+          </p>
+        </div>
+        <div class="card-body">
+          <p class="mb-0">{{message.message}}</p>
+        </div>
+      </div>
+    </li>
+    {% else %}
+    <li class="d-flex justify-content-start mb-4">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between p-3">
+          <p class="fw-bold mb-0">{{message.sender.get_full_name}}</p>
+          <p class="text-muted small mb-0">
+            <i class="far fa-clock"></i> {{message.timestamp|timesince }}
+          </p>
+        </div>
+        <div class="card-body">
+          <p class="mb-0">{{message.message}}</p>
+        </div>
+      </div>
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
+        alt="{{message.sender.username}}"
+        title="{{message.sender.username}}"
+        class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong"
+        width="60"
+      />
+    </li>
+    {% endif %} {% endfor %}
+  </ul>
+  <div
+    class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2 message-control"
+  >
+    <img
+      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
+      alt="avatar 3"
+      style="width: 40px; height: 100%"
+    />
+    <textarea
+      placeholder="Type message"
+      class="form-control form-control-lg"
+      id="message-body"
+      rows="1"
+    ></textarea>
+
+    <a class="ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a>
+    <a class="ms-3 text-muted" href="#!"><i class="fas fa-smile"></i></a>
+    <a class="ms-3" id="send-message-btn" title="Send">
+      <i class="fas fa-paper-plane"></i>
+    </a>
+  </div>
+</div>

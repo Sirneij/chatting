@@ -1,0 +1,37 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #eee;
+}
+
+.active {
+	background-color: #eee;
+}
+.scrollable {
+	min-height: 80vh;
+	max-height: 85vh;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.scrollable .message-control {
+	margin-top: auto !important;
+}
+
+.scrollable .alert {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#send-message-btn {
+	cursor: pointer;
+}

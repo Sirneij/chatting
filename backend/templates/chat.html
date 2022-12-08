@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<!--static-->
+{% load static %}
+<!--content-->
+{% block content %}
+<div class="container py-5">
+  <div class="row">
+    <!--List of users-->
+    {% include 'components/_aside.html' %}
+    <!--Messages-->
+    {% include 'components/_messages.html' %}
+  </div>
+</div>
+{% endblock content %}
+
+<!--js-->
+{% block js %} {% endblock js %}
