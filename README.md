@@ -2,7 +2,9 @@
 
 `chatting` is a full-stack private chatting application which uses modern technologies such as `Python` &mdash; `Django` and `Django channels` &mdash; and `TypeScript/JavaScript` &mdash; `SvelteKit`. Its real-time feature utilizes `WebSocket`.
 
-![Application Demostration](https://raw.githubusercontent.com/Sirneij/chatting/main/recording.mp4)
+
+https://user-images.githubusercontent.com/29700390/206579830-9420b2a2-c003-4448-8001-74333cd516b1.mp4
+
 
 `chatting` has `backend` and `frontend` directories. Contrary to its name, `backend` is a classic full-fledged application, not only backend code. Though not refined yet, you can chat and enjoy real-time conversations there as well. `frontend` does what it implies. It houses all user-facing codes, written using `SvelteKit` and `TypeScript`.
 
