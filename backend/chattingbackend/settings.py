@@ -56,9 +56,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if not DEBUG:
-    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
-
 ROOT_URLCONF = 'chattingbackend.urls'
 
 TEMPLATES = [
@@ -176,6 +173,3 @@ CSRF_TRUSTED_ORIGINS: list[str] = config(
 CORS_ALLOWED_ORIGINS: list[str] = config(
     'CORS_ALLOWED_ORIGINS', default='http://localhost:5173,http://127.0.0.1:5173', cast=Csv()
 )
-
-if not DEBUG:
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
